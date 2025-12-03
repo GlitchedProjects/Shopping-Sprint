@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "store_sprint", "code\store_sprint.csproj", "{14A71C0E-3DEE-0186-E3CB-455B092598C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "store_sprint.editor", "Editor\store_sprint.editor.csproj", "{3C531BDD-87AA-A808-74E4-024C0AE7AA4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14A71C0E-3DEE-0186-E3CB-455B092598C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14A71C0E-3DEE-0186-E3CB-455B092598C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14A71C0E-3DEE-0186-E3CB-455B092598C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14A71C0E-3DEE-0186-E3CB-455B092598C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C531BDD-87AA-A808-74E4-024C0AE7AA4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C531BDD-87AA-A808-74E4-024C0AE7AA4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C531BDD-87AA-A808-74E4-024C0AE7AA4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C531BDD-87AA-A808-74E4-024C0AE7AA4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC669DF8-B5BF-4094-B2B9-AF30F7DE02FC}
+	EndGlobalSection
+EndGlobal

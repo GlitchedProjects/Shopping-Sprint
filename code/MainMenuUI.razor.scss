@@ -1,0 +1,87 @@
+MainMenuUI
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: transparent;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	font-weight: bold;
+	border-radius: 20px;
+	pointer-events: all;
+
+	.title
+	{
+		position: absolute;
+		bottom: 900px;
+		font-size: 125px;
+		font-family: Poppins;
+		color: #fff;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.playButton
+	{
+		transition: font-size 0.2s ease;
+		font-size: 75px;
+		font-family: Poppins;
+		color: #fff;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		&:hover
+		{
+			cursor: pointer;
+			transition: font-size 0.2s ease;
+			font-size: 90px;
+			sound-in: ui.button.over;
+		}
+
+		&:active
+		{
+			transition: font-size 0.1s ease;
+			font-size: 80;
+			transition: color 0.1s ease;
+			color: #aaa;
+			sound-in: plink;
+		}
+	}
+
+	.exitButton
+	{
+		transition: font-size 0.2s ease;
+		font-size: 75px;
+		font-family: Poppins;
+		color: #fff;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		&:hover
+		{
+			cursor: pointer;
+			transition: font-size 0.2s ease;
+			font-size: 90px;
+			sound-in: ui.button.over;
+		}
+
+		&:active
+		{
+			transition: font-size 0.1s ease;
+			font-size: 80;
+			transition: color 0.1s ease;
+			color: #aaa;
+			sound-in: plink;
+		}
+	}
+}
