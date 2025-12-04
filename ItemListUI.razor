@@ -1,0 +1,71 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+
+<root  class="@(listOpen ? "" : "hide")">
+	<div class="Head">
+		<title> List </title>
+	</div>
+	<div class="List">
+		@if(List_Egg == true)
+		{
+			<div> eggs </div> 
+			
+			@if(itemManager.egg == true)
+			{
+				<span class="check" > ✔️ </span>
+			}
+		}
+
+		@if(List_Bread == true)
+		{
+			<div> bread </div> @if(itemManager.bread == true) {<Panel> ✔️ </Panel>}
+		}
+
+	</div>
+</root>
+
+@code
+{
+
+	[Property]
+	public bool listOpen {get; set;}
+
+    [Property]
+    public ItemManager itemManager;
+
+	[Property]
+	public SoundPointComponent listSoundClose;
+
+	[Property]
+	public SoundPointComponent listSoundOpen;
+
+    [Property]
+    public bool List_Egg;
+    [Property]
+    public bool List_Bread;
+
+
+    protected override void OnUpdate()
+    {
+        if(Input.Pressed("OpenList"))
+		{
+			listOpen = !listOpen;
+			
+			if(listOpen == true)
+			{
+				listSoundOpen.StartSound();
+			}
+			if(listOpen == false)
+			{
+				listSoundClose.StartSound();
+			}
+		}
+    }
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( itemManager.egg, List_Egg, List_Bread, itemManager.bread, listOpen );
+}

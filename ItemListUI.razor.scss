@@ -1,0 +1,59 @@
+ItemListUI
+{
+	height: 540px;
+	width: 270px;
+	margin-top: 520px;
+	margin-left: 15px;
+	background-color: #444;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	font-weight: bold;
+	border-radius: 20px;
+	
+
+	&.hide
+	{
+		opacity: 0;
+		transition: opacity 0.5s ease-in-out;
+	}
+
+	.List
+	{
+		display:  flex;
+		flex-wrap: wrap;
+		font-size: 35px;
+		font-family: Poppins;
+		color: #fff;
+		margin-right: 43px;
+		margin-left: 50px;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.check
+	{
+		display: flex;
+		flex-direction: row;
+		position: relative;
+		font-size: 35px;
+		font-family: Poppins;
+		color: #69f0a3;
+		bottom: 3px;
+		left: 5%;
+	}
+
+	.Head
+	{
+		position: absolute;
+		font-size: 75px;
+		font-family: Poppins;
+		letter-spacing: 3px;
+		color: #fff;
+		justify-content: center;
+		align-items: center;
+		bottom: 450px;
+		left: 82px;
+	}
+}

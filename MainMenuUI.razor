@@ -1,0 +1,25 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System.Threading.Tasks
+@inherits PanelComponent
+@namespace Sandbox
+
+<root>
+	<div class="title">Shopping Sprint </div>
+	<button class="playButton" onclick=@begin> Play </button>
+	<button class="exitButton"> Leave </button>
+</root>
+
+@code
+{
+	    async Task begin()
+    {
+        await GameTask.DelaySeconds(0.2f);
+        Scene.LoadFromFile("scenes/megamart-01.scene");
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( "" );
+}

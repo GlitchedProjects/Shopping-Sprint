@@ -1,0 +1,39 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System
+@inherits PanelComponent
+@namespace Sandbox
+
+<root>
+	<div class="title">@MyStringValue</div>
+</root>
+
+@code
+{  
+	[Property][ReadOnly]
+	public bool runStarted;
+
+	public float Elapsed;
+
+	  protected override void OnUpdate()
+    {
+		if (runStarted == true)
+		{
+			Elapsed += Time.Delta;
+		}
+
+		var ts = TimeSpan.FromSeconds(Elapsed);
+		if(runStarted == true)
+		{
+        	MyStringValue = $"{ts.Minutes:00}:{ts.Seconds:00}:{ts.Milliseconds:000}";
+		}
+    }
+
+	[Property][TextArea]
+	public string MyStringValue = "00:00:000";
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( runStarted, MyStringValue );
+}

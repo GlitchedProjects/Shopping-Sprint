@@ -1,0 +1,43 @@
+@using Sandbox;
+@using Sandbox.Services
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+
+<root>
+	<div class="title"> @MyStringValue </div>
+</root>
+
+@code
+{
+    [Property]
+    public PlayerController plr;
+
+	[Property] [TextArea]
+	public string MyStringValue;
+
+    protected override void OnUpdate()
+    {
+		float speede = plr.Velocity.Length;
+		float speedMPH = speede * 0.0426f;
+		if (plr == null)
+		{
+			Log.Info(message: "SPEEDOMETER: No player assigned");
+			return;
+		}
+		else
+		{
+			MyStringValue = $"{speedMPH:0.0} MPH";
+			if (speedMPH >= 53.5f )
+			{
+				Sandbox.Services.Achievements.Unlock("High Speed");
+				Log.Info($"Achievement Unlocked: {"High Speed"}");
+			}
+		}
+    }
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
+}

@@ -1,0 +1,19 @@
+SpeedometerUI
+{
+	position: absolute;
+	width: 140px;
+	height: 100px;
+	left: 1920px;
+	background-color: #44444450;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	border-radius: 30px;
+
+	.title
+	{
+		font-size: 25px;
+		font-family: Poppins;
+		color: #fff;
+	}
+}
